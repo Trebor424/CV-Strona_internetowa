@@ -1,0 +1,10 @@
+{% extends 'strona_protetyczna/base.html' %}
+{% block main %}
+    <h1>Dodaj nową pozycję do cennika</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Zapisz</button>
+    </form>
+    <p><a href="{% url 'cennik' %}">Powrót do cennika</a></p>
+{% endblock %}

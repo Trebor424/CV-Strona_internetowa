@@ -1,0 +1,18 @@
+{% extends 'strona_protetyczna/base.html' %}
+{% block main %}
+    <h1>Oferty Pracy</h1>
+    {% for oferta in oferty %}
+        <div class="oferta-pracy">
+            <h2>{{ oferta.tytul }}</h2>
+            <p class="data-dodania">Dodano: {{ oferta.data_dodania|date:"d.m.Y" }}</p>
+            <p>{{ oferta.opis|linebreaksbr }}</p>
+            {% if oferta.aktywna %}
+                <span class="status aktywna">Aktywna</span>
+            {% else %}
+                <span class="status nieaktywna">Nieaktywna</span>
+            {% endif %}
+        </div>
+    {% empty %}
+        <p>Aktualnie nie ma żadnych ofert pracy.</p>
+    {% endfor %}
+{% endblock %}

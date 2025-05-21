@@ -1,0 +1,41 @@
+{% extends 'strona_protetyczna/base.html' %}
+
+{% block main %}
+    <h1>Cennik Usług</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nazwa usługi</th>
+                <th>Opis</th>
+                <th>Cena</th>
+                {% if user.is_authenticated %}
+                <th>Akcje</th>
+                {% endif %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for pozycja in pozycje_cennika %}
+            <tr>
+                <td>{{ pozycja.nazwa }}</td>
+                <td>{{ pozycja.opis }}</td>
+                <td>{{ pozycja.cena }} zł</td>
+                {% if user.is_authenticated %}
+                <td>
+                    <a href="{% url 'edytuj_cennik' pozycja.id %}">Edytuj</a> |
+                    <form method="post" action="{% url 'usun_cennik' pozycja.id %}" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" onclick="return confirm('Czy na pewno chcesz usunąć tę pozycję?')">Usuń</button>
+                    </form>
+                </td>
+                {% endif %}
+            </tr>
+            {% empty %}
+            <tr><td colspan="{% if user.is_authenticated %} 4 {% else %} 3 {% endif %}">Brak pozycji w cenniku.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% if user.is_authenticated %}
+    <p><a href="{% url 'dodaj_cennik' %}">Dodaj nową pozycję do cennika</a></p>
+    {% endif %}
+{% endblock %}

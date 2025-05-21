@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona Główna - Firma Protetyczna</title>
+    <link rel="stylesheet" href="{% static 'strona_protetyczna/css/style.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'o_nas' %}">O nas</a></li>
+                <li><a href="{% url 'cennik' %}">Cennik</a></li>
+                <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                <li><a href="{% url 'kontakt' %}">Kontakt</a></li>
+                <li><a href="{% url 'oferty_pracy' %}">Oferty Pracy</a></li></ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Witaj na stronie naszej firmy protetycznej!</h1>
+        <p>Krótki opis Twojej firmy i jej usług.</p>
+    </main>
+    <footer>
+        <p>&copy; {{ year }} Twoja Firma Protetyczna</p>
+    </footer>
+    <script src="{% static 'strona_protetyczna/js/scripts.js' %}"></script>
+</body>
+</html>

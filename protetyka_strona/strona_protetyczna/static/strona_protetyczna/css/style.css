@@ -1,0 +1,138 @@
+/* style.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #007bff; /* Kolor niebieski */
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ddd;
+}
+
+main {
+    padding: 20px;
+    background-color: white;
+    margin: 20px auto;
+    max-width: 960px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1, h2 {
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+}
+
+tr:hover td {
+    background-color: #f5f5f5;
+}
+
+.oferta-pracy {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.oferta-pracy h2 {
+    color: #28a745; /* Kolor zielony dla tytułu oferty */
+}
+
+.data-dodania {
+    color: #777;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+.status.aktywna {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status.nieaktywna {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+iframe {
+    width: 100%; /* Responsywny iframe */
+    max-width: 600px; /* Domyślna maksymalna szerokość */
+    height: auto;
+    border: 0;
+    margin-top: 15px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #333;
+    color: #f4f4f4;
+    font-size: 0.9em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

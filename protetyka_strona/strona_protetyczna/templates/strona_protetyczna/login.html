@@ -1,0 +1,13 @@
+{% extends 'strona_protetyczna/base.html' %}
+{% block main %}
+    <h1>Logowanie</h1>
+    {% if form.errors %}
+        <p style="color: red;">{{ form.errors.non_field_errors }}</p>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Zaloguj</button>
+    </form>
+    <p>Nie masz konta? <a href="{% url 'register' %}">Zarejestruj się</a> (opcjonalne).</p>
+{% endblock %}
